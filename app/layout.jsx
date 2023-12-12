@@ -13,7 +13,7 @@ const RootLayout = ({ children }) => {
       <body>
         <Provider>
           <div className="main">
-            <div className="gradient" />
+            <div className="bg-gradient-to-r from-fuchsia-600 via-violet-600 to-purple-600 z-[3] h-fit w-full max-w-[640px] absolute" />
           </div>
           <main className="app">
             <Nav />

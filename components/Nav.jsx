@@ -3,7 +3,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState, useEffect } from "react";
 import { signIn, signOut, useSession, getProviders } from "next-auth/react";
-
 const Nav = () => {
   const { data: session } = useSession();
 
@@ -18,25 +17,25 @@ const Nav = () => {
     setUpProviders();
   }, []);
   return (
-    <nav className="flex-between w-full mb-16 pt-3">
+    <nav className="flex-between w-full mb-16 pt-7">
       <Link href="/" className="flex gap-2 flex-center">
         <Image
-          src="/assets/images/logo.svg"
+          src="/assets/images/ai2.png"
           alt="logo"
-          width={30}
-          height={30}
+          width={35}
+          height={35}
           className="object-contain"
         />
-        <p className="logo_text">PromptShare</p>
+        <p className="logo_text purple_gradient">PromptShare</p>
       </Link>
       {/*Desktop Navigation*/}
       <div className="sm:flex hidden">
         {session?.user ? (
           <div className="flex gap-3 md:gap-5">
-            <Link href="/create-prompt" className="black_btn">
+            <Link href="/create-prompt" className="create_btn">
               Create Post
             </Link>
-            <button type="button" onClick={signOut} className="outline_btn">
+            <button type="button" onClick={signOut} className="logout_btn">
               Sign Out
             </button>
             <Link href="/profile">
@@ -58,7 +57,7 @@ const Nav = () => {
                   type="button"
                   key={provider.name}
                   onClick={() => signIn(provider.id)}
-                  className="black_btn"
+                  className="create_btn"
                 >
                   Sign In
                 </button>
@@ -100,7 +99,7 @@ const Nav = () => {
                     setToggleDropdown(false);
                     signOut();
                   }}
-                  className="mt-5 w-full black_btn"
+                  className="mt-2 w-full create_btn"
                 >
                   Sign Out
                 </button>

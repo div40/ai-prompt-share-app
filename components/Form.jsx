@@ -7,15 +7,14 @@ const Form = ({ type, post, setPost, submitting, handleSubmit }) => {
         <span className="blue_gradient">{type} Post</span>
       </h1>
       <p className="desc text-left max-w-md">
-        {type} and share AI prompts with the world and share your knowledge or
-        acquire something new!
+        {type} and share AI prompts with the world and share your knowledge!
       </p>
       <form
         onSubmit={handleSubmit}
         className="mt-10 w-full max-w-2xl flex flex-col gap-7 glassmorphism"
       >
         <label>
-          <span className="font-satoshi font-semibold text-base text-gray-700">
+          <span className="font-satoshi font-semibold text-base text-gray-100">
             Your AI Prompt
           </span>
           <textarea
@@ -27,9 +26,12 @@ const Form = ({ type, post, setPost, submitting, handleSubmit }) => {
           />
         </label>
         <label>
-          <span className="font-satoshi font-semibold text-base text-gray-700">
+          <span className="font-satoshi font-semibold text-base text-gray-100">
             Tag
-            <span className="font-normal"> ( Ex: #webdevelopment, #idea )</span>
+            <span className="font-medium">
+              {" "}
+              ( Ex : #webdevelopment, #idea )
+            </span>
           </span>
           <input
             value={post.tag}
@@ -40,13 +42,13 @@ const Form = ({ type, post, setPost, submitting, handleSubmit }) => {
           />
         </label>
         <div className="flex-end mx-3 mb-5 gap-4">
-          <Link href="/" className="text-gray-500 text-sm">
+          <Link href="/" className="text-gray-100 text-lg">
             Cancel
           </Link>
           <button
             type="submit"
             disabled={submitting}
-            className="px-5 py-1.5 text-sm bg-primary-orange rounded-full text-white"
+            className="px-5 py-1.5 text-lg bg-blue-700 rounded-lg text-white"
           >
             {submitting ? `${type}...` : type}
           </button>
