@@ -28,6 +28,15 @@ const Nav = () => {
         />
         <p className="logo_text purple_gradient">PromptShare</p>
       </Link>
+      <Link href="https://github.com/div40/ai-prompt-share-app" target="_blank">
+        <Image
+          src="/assets/images/github.svg"
+          alt="github"
+          width={25}
+          height={25}
+          className="invert"
+        />
+      </Link>
       {/*Desktop Navigation*/}
       <div className="sm:flex hidden">
         {session?.user ? (
