@@ -43,7 +43,8 @@ const Feed = () => {
           className="search_input peer"
         />
       </form>
-      <PromptCardList data={[posts]} handleTagClick={() => {}} />
+      {/* changed to posts object bug was bcause it was sent as an array */}
+      <PromptCardList data={posts} handleTagClick={() => {}} />
     </section>
   );
 };
